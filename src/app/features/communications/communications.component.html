@@ -1,0 +1,10 @@
+<p></p>
+<div class="row">
+  <div class='col'>
+    <app-entry (itemAdded)='onItemAdded($event)'></app-entry>
+  </div>
+  <div class='col'>
+    <app-list title='Get this stuff done!'
+              [items]='todoItems'></app-list>
+  </div>
+</div>
