@@ -1,28 +1,37 @@
-import { Action } from '@ngrx/store';
-
-
+// import { Action } from '@ngrx/store';
+import * as actions from '../actions/counter.action';
 
 export interface State {
   count: number;
+  by: number;
 }
 
 const initialState: State = {
-  count: 0
+  count: 0,
+  by: 1
 };
 
-export function reducer(state: State = initialState, action: Action): State {
+export function reducer(state: State = initialState, action: actions.All): State {
   switch (action.type) {
-    case 'Increment': {
+    case actions.COUNT_BY_SET: {
       return {
-        count: state.count + 1
+        count: state.count,
+        by: action.by
       };
     }
-    case 'Decrement': {
+    case actions.INCREMENT: {
       return {
-        count: state.count - 1
+        count: state.count + state.by,
+        by: state.by
       };
     }
-    case 'Reset': {
+    case actions.DECREMENT: {
+      return {
+        count: state.count - state.by,
+        by: state.by
+      };
+    }
+    case actions.RESET: {
       return initialState;
     }
     default: {
