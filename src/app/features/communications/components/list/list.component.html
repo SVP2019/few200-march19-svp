@@ -4,6 +4,7 @@
       [ngClass]="{'completed': item.completed, 'alert-danger': item.completed, 'alert-info': !item.completed}"
       *ngFor='let item of items'>
     <input type='button'
+           (click)='xClicked(item)'
            class='btn btn-sm btn-success'
            *ngIf='!item.completed'
            value='X'>

@@ -13,5 +13,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  xClicked(item: ListItem) {
+    item.completed = true;
+  }
 }
