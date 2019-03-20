@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { State, selectCurrent, selectAtStart, selectCountingBy, selectAtChange } from '../../reducers';
 import { Observable } from 'rxjs';
-import * as actions from '../../actions/counter.action';
+import * as actions from '../../actions/counter.actions';
 
 @Component({
   selector: 'app-redux-demo',

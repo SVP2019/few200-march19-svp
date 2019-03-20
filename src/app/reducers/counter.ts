@@ -1,5 +1,5 @@
 // import { Action } from '@ngrx/store';
-import * as actions from '../actions/counter.action';
+import * as actions from '../actions/counter.actions';
 
 export interface State {
   count: number;

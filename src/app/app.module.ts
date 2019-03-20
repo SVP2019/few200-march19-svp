@@ -12,6 +12,9 @@ import { ReduxDemoComponent } from './components/redux-demo/redux-demo.component
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { CounterEffects } from './effects/counter.effects';
+import { TodolistModule } from './features/todolist/todolist.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { reducers } from './reducers';
     AppRoutingModule,
     CommunicationsModule,
     StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument() // can be removed from production
+    StoreDevtoolsModule.instrument(), // can be removed from production
+    EffectsModule.forRoot([CounterEffects]),
+    TodolistModule
   ],
   providers: [],
   bootstrap: [AppComponent]
