@@ -1,0 +1,13 @@
+<ul class="list-unstyled">
+  <li class="alert alert-success"
+      *ngFor='let item of items'>
+    <input type='button'
+           (click)='onloanClicked(item)'
+           class='btn btn-sm btn-success'
+           *ngIf='!item.loaned'
+           value='Loan'>
+    <p>{{item.author}}</p>
+    <p>{{item.title}}</p>
+    <p>{{item.format}}</p>
+  </li>
+</ul>

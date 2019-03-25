@@ -1,0 +1,24 @@
+<header>
+  <h4>My Library</h4>
+</header>
+<div class='row'>
+  <div class='col'>
+    <app-entry></app-entry>
+  </div>
+  <div class='col'>
+    My Books
+    <app-list [items]='bookList$|async'></app-list>
+  </div>
+  <div class='col'>
+    Loaned Books
+    <app-loan [items]='loanList$|async'></app-loan>
+  </div>
+</div>
+<!-- <pre>
+  Loaned:
+  {{ loanList$ | async | json }}
+</pre>
+<pre>
+  All
+  {{ bookList$ | async | json }}
+</pre> -->
