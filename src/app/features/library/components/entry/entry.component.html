@@ -1,22 +1,38 @@
-<div class='form-group'>
-  <label>Author</label>
-  <input class='form-control'
-         #author>
-  <label>Title</label>
-  <input class='form-control'
-         #title>
-  <label>Format</label>
-  <select class='form-control'
-          required
-          #format>
-    <option value='None'></option>
-    <option value='Hardcover'>Hardcover</option>
-    <option value='Paperback'>Paperback</option>
-    <option value='E-Book'>E-Book</option>
-  </select>
-  <p></p>
-  <input type="button"
-         (click)='add(author,title,format)'
-         class='btn btn-primary'
-         value='Add'>
-</div>
+<form #form='ngForm'
+      (ngSubmit)='add(author, title, format)'>
+  <div class='form-group'
+       id='entry'
+       name='entry'>
+    <label>Author</label>
+    <input class='form-control'
+           ngModel
+           id='author'
+           name='author'
+           required
+           #author>
+    <label>Title</label>
+    <input class='form-control'
+           ngModel
+           id='title'
+           name='title'
+           required
+           #title>
+    <label>Format</label>
+    <select class='form-control'
+            ngModel
+            id='format'
+            name='format'
+            required
+            #format>
+      <option value='None'></option>
+      <option value='Hardcover'>Hardcover</option>
+      <option value='Paperback'>Paperback</option>
+      <option value='E-Book'>E-Book</option>
+    </select>
+    <p></p>
+    <input type='submit'
+           [disabled]='!form.valid'
+           class='btn btn-primary'
+           value='Add'>
+  </div>
+</form>
